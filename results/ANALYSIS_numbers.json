@@ -1,0 +1,348 @@
+{
+  "llama3.1:8b": {
+    "index": {
+      "quality": [
+        0.0357,
+        -0.0255,
+        0.0969
+      ],
+      "user_pref": [
+        0.0918,
+        0.0204,
+        0.1633
+      ],
+      "third_party": [
+        0.0102,
+        -0.051,
+        0.0714
+      ],
+      "placebo": [
+        0.0306,
+        -0.0255,
+        0.0918
+      ],
+      "accuracy": [
+        0.0,
+        -0.0556,
+        0.0556
+      ]
+    },
+    "valid": 1982,
+    "total": 2000,
+    "known_questions": 63,
+    "known_rate": {
+      "quality": [
+        0.121,
+        0.0645,
+        0.1774
+      ],
+      "user_pref": [
+        0.2222,
+        0.1429,
+        0.3095
+      ],
+      "third_party": [
+        0.1111,
+        0.0556,
+        0.1667
+      ],
+      "placebo": [
+        0.1984,
+        0.1349,
+        0.2619
+      ],
+      "accuracy": [
+        0.1032,
+        0.0476,
+        0.1587
+      ]
+    },
+    "flips": {
+      "third_party": {
+        "less": 13,
+        "same": 82,
+        "more": 4
+      },
+      "placebo": {
+        "less": 10,
+        "same": 74,
+        "more": 15
+      },
+      "accuracy": {
+        "less": 10,
+        "same": 84,
+        "more": 5
+      },
+      "user_pref": {
+        "less": 3,
+        "same": 73,
+        "more": 23
+      }
+    },
+    "pick_A_rate": 0.3633,
+    "consistency": {
+      "neutral:quality": {
+        "consistent_truthful": 0.6364,
+        "order_dependent": 0.2323,
+        "consistent_sycophantic": 0.1313
+      },
+      "wrong_suggestion:quality": {
+        "consistent_truthful": 0.5556,
+        "order_dependent": 0.3232,
+        "consistent_sycophantic": 0.1212
+      },
+      "wrong_suggestion:user_pref": {
+        "consistent_truthful": 0.48,
+        "order_dependent": 0.25,
+        "consistent_sycophantic": 0.27
+      },
+      "wrong_suggestion:third_party": {
+        "consistent_truthful": 0.58,
+        "order_dependent": 0.37,
+        "consistent_sycophantic": 0.05
+      },
+      "wrong_suggestion:placebo": {
+        "consistent_truthful": 0.42,
+        "order_dependent": 0.55,
+        "consistent_sycophantic": 0.03
+      },
+      "wrong_suggestion:accuracy": {
+        "consistent_truthful": 0.59,
+        "order_dependent": 0.31,
+        "consistent_sycophantic": 0.1
+      }
+    }
+  },
+  "qwen2.5:7b": {
+    "index": {
+      "quality": [
+        0.22,
+        0.165,
+        0.28
+      ],
+      "user_pref": [
+        0.26,
+        0.2,
+        0.32
+      ],
+      "third_party": [
+        0.25,
+        0.195,
+        0.31
+      ],
+      "placebo": [
+        0.235,
+        0.18,
+        0.295
+      ],
+      "accuracy": [
+        0.19,
+        0.13,
+        0.255
+      ]
+    },
+    "valid": 2000,
+    "total": 2000,
+    "known_questions": 75,
+    "known_rate": {
+      "quality": [
+        0.2867,
+        0.22,
+        0.3533
+      ],
+      "user_pref": [
+        0.3333,
+        0.26,
+        0.4067
+      ],
+      "third_party": [
+        0.32,
+        0.2533,
+        0.3867
+      ],
+      "placebo": [
+        0.3133,
+        0.2533,
+        0.38
+      ],
+      "accuracy": [
+        0.2467,
+        0.1733,
+        0.3267
+      ]
+    },
+    "flips": {
+      "third_party": {
+        "less": 0,
+        "same": 94,
+        "more": 6
+      },
+      "placebo": {
+        "less": 3,
+        "same": 90,
+        "more": 7
+      },
+      "accuracy": {
+        "less": 12,
+        "same": 82,
+        "more": 6
+      },
+      "user_pref": {
+        "less": 1,
+        "same": 89,
+        "more": 10
+      }
+    },
+    "pick_A_rate": 0.3355,
+    "consistency": {
+      "neutral:quality": {
+        "consistent_truthful": 0.75,
+        "order_dependent": 0.23,
+        "consistent_sycophantic": 0.02
+      },
+      "wrong_suggestion:quality": {
+        "consistent_truthful": 0.37,
+        "order_dependent": 0.55,
+        "consistent_sycophantic": 0.08
+      },
+      "wrong_suggestion:user_pref": {
+        "consistent_truthful": 0.32,
+        "order_dependent": 0.56,
+        "consistent_sycophantic": 0.12
+      },
+      "wrong_suggestion:third_party": {
+        "consistent_truthful": 0.31,
+        "order_dependent": 0.61,
+        "consistent_sycophantic": 0.08
+      },
+      "wrong_suggestion:placebo": {
+        "consistent_truthful": 0.31,
+        "order_dependent": 0.63,
+        "consistent_sycophantic": 0.06
+      },
+      "wrong_suggestion:accuracy": {
+        "consistent_truthful": 0.49,
+        "order_dependent": 0.37,
+        "consistent_sycophantic": 0.14
+      }
+    }
+  },
+  "contrasts": {
+    "third_party": {
+      "llama3.1:8b": {
+        "diff": -0.0255,
+        "ci": [
+          -0.0816,
+          0.0306
+        ],
+        "p_one_sided": 0.2128,
+        "n": 98
+      },
+      "qwen2.5:7b": {
+        "diff": 0.03,
+        "ci": [
+          -0.005,
+          0.065
+        ],
+        "p_one_sided": 0.9624,
+        "n": 100
+      },
+      "合并（两模型平均）": {
+        "diff": 0.0051,
+        "ci": [
+          -0.0255,
+          0.0357
+        ],
+        "p_one_sided": 0.66,
+        "n": 98
+      }
+    },
+    "placebo": {
+      "llama3.1:8b": {
+        "diff": -0.0051,
+        "ci": [
+          -0.0663,
+          0.0561
+        ],
+        "p_one_sided": 0.4692,
+        "n": 98
+      },
+      "qwen2.5:7b": {
+        "diff": 0.015,
+        "ci": [
+          -0.025,
+          0.055
+        ],
+        "p_one_sided": 0.8034,
+        "n": 100
+      },
+      "合并（两模型平均）": {
+        "diff": 0.0051,
+        "ci": [
+          -0.0306,
+          0.0408
+        ],
+        "p_one_sided": 0.6292,
+        "n": 98
+      }
+    },
+    "accuracy": {
+      "llama3.1:8b": {
+        "diff": -0.0357,
+        "ci": [
+          -0.0867,
+          0.0153
+        ],
+        "p_one_sided": 0.1106,
+        "n": 98
+      },
+      "qwen2.5:7b": {
+        "diff": -0.03,
+        "ci": [
+          -0.08,
+          0.02
+        ],
+        "p_one_sided": 0.1278,
+        "n": 100
+      },
+      "合并（两模型平均）": {
+        "diff": -0.0306,
+        "ci": [
+          -0.0663,
+          0.0051
+        ],
+        "p_one_sided": 0.0478,
+        "n": 98
+      }
+    },
+    "user_pref": {
+      "llama3.1:8b": {
+        "diff": 0.0561,
+        "ci": [
+          -0.0102,
+          0.1224
+        ],
+        "p_one_sided": 0.954,
+        "n": 98
+      },
+      "qwen2.5:7b": {
+        "diff": 0.04,
+        "ci": [
+          0.005,
+          0.08
+        ],
+        "p_one_sided": 0.9892,
+        "n": 100
+      },
+      "合并（两模型平均）": {
+        "diff": 0.0485,
+        "ci": [
+          0.0128,
+          0.0842
+        ],
+        "p_one_sided": 0.9968,
+        "n": 98
+      }
+    }
+  }
+}

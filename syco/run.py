@@ -4,7 +4,7 @@
     python -m syco.run --backend openai --model deepseek-chat --base-url https://api.deepseek.com --api-key-env DEEPSEEK_API_KEY
     python -m syco.run --backend mock          # 只检查流程
 
-结果逐条追加写入 results/raw_<评分者>.jsonl。中途中断后重新运行同一命令会从断点继续。
+结果逐条追加写入 results/raw_<评分者>.jsonl。中途中断后重新运行同一命令会从断点继续，之前失败的判断也会重试。
 """
 import argparse, json, os, re, threading, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -43,7 +43,8 @@ def main():
         with open(path, encoding="utf-8") as f:
             for line in f:
                 r = json.loads(line)
-                done.add((r["qid"], r["context"], r["condition"], r["sycophantic_first"]))
+                if r.get("choice") is not None:  # 失败的判断（如连接中断）下次运行会自动重试
+                    done.add((r["qid"], r["context"], r["condition"], r["sycophantic_first"]))
 
     jobs = [(it, c, sf) for it in items for c in conds for sf in (True, False)
             if (it["qid"], it["context"], c, sf) not in done]

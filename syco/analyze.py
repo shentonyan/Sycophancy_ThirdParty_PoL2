@@ -24,8 +24,15 @@ LABELS = {
 
 
 def load(path):
+    """读取原始记录；同一判断若因重试出现多条，保留最后一条有效记录。"""
     with open(path, encoding="utf-8") as f:
-        return [json.loads(l) for l in f]
+        rows = [json.loads(l) for l in f]
+    best = {}
+    for r in rows:
+        k = (r["qid"], r["context"], r["condition"], r["sycophantic_first"])
+        if r["choice"] is not None or k not in best:
+            best[k] = r
+    return list(best.values())
 
 
 def per_item(rows):
